@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorty - Your Ultimate URL Shortener</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Shorty</div>
+        <ul>
+            <li><a href="creator.html">Creator Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Tagline -->
+    <div class="tagline-container">
+        <p class="tagline">Shorten, Share, and Track Your URLs!</p>
+        <p class="subtext">The easiest and fastest way to manage your links.</p>
+    </div>
+
+    <!-- URL Shortener Form -->
+    <div class="container">
+        <h2>Enter your URL to get started</h2>
+        <input type="text" id="url-input" placeholder="Enter your long URL">
+        <button onclick="shortenUrl()">Generate Short URL</button>
+
+        <div class="short-url" id="short-url-container">
+            <p>Your shortened URL:</p>
+            <a id="short-url" href="" target="_blank"></a>
+        </div>
+        <button class="copy-btn" id="copy-btn" onclick="copyUrl()">Copy URL</button>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-box">
+                <h3>Fast & Reliable</h3>
+                <p>Get your shortened URL in an instant with our fast and reliable service.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Custom Short URLs</h3>
+                <p>Create custom short URLs that are memorable and meaningful to you.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Analytics</h3>
+                <p>Track the number of clicks and insights for each shortened URL.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Shorty © 2024 | Crafted with care by [Your Name]</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
