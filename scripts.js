@@ -1,4 +1,6 @@
-function shortenUrl() {
+async function shortenUrl() {
+    console.log('From frontEnd');
+    
     const urlInput = document.getElementById('url-input').value;
     if (!urlInput) {
         alert("Please enter a valid URL!");
@@ -6,7 +8,25 @@ function shortenUrl() {
     }
 
     // Simulating the URL shortening process (normally you would send a request to your back-end API)
-    const shortUrl = `https://shorty.com/${Math.random().toString(36).substr(2, 5)}`;
+    console.log('Before ', urlInput);
+    let shortUrl;
+    try {
+        // shortUrl = await fetch("http://localhost:3000/", {
+        //     method: "POST",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({ urlInput }), // Send data in JSON format
+        //   });
+        shortUrl = await axios.post('http://localhost:3000/', { url: urlInput });
+    } catch (error) {
+        console.log('error: ', error);
+        
+    }
+    shortUrl = JSON.stringify(shortUrl.data);
+    // const shortUrl = await axios.post('http://localhost:3000/', { url: urlInput });
+    console.log('after: ', shortUrl);
+    
     
     // Display the shortened URL
     const shortUrlContainer = document.getElementById('short-url-container');
@@ -36,3 +56,6 @@ function copyUrl() {
     
     alert("Short URL copied to clipboard!");
 }
+
+window.shortenUrl = shortenUrl;
+window.copyUrl = copyUrl;
